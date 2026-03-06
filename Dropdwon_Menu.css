@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: #1e272e;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+  position: relative;
+}
+
+/* Dropdown base */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.dropdown-menu a {
+  color: #1e272e;
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #f1f2f6;
+}
+
+/* Sub dropdown */
+.sub-dropdown {
+  position: relative;
+}
+
+.sub-menu {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  background: white;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.sub-dropdown:hover .sub-menu {
+  display: flex;
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Mobile menu */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #1e272e;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    padding: 15px 0;
+  }
+
+  .dropdown-menu,
+  .sub-menu {
+    position: static;
+    background: #2f3640;
+    box-shadow: none;
+  }
+
+  .dropdown-menu a,
+  .sub-menu a {
+    color: white;
+  }
+
+  #menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
